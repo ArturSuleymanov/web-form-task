@@ -1,0 +1,67 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+     function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    </script>
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name='captcha_settings' value='{"keyname":"google_recaptcha","fallback":"true","orgId":"00D5g000000Jl3r","ts":""}'>
+    <input type=hidden name="oid" value="00D5g000000Jl3r">
+    <input type=hidden name="retURL" value="http://yandex.by">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="artur.e.suleymanov@gmail.com">                                   -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+    
+    <label for="url">Website</label><input  id="url" maxlength="80" name="url" size="20" type="text" /><br>
+    
+    <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+    
+    <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+    
+    Birthdate:<span class="dateInput dateOnlyInput"><input  id="00N5g000000iJhE" name="00N5g000000iJhE" size="12" type="text" /></span><br>
+    
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    
+    <label for="country">Country</label><input  id="country" maxlength="40" name="country" size="20" type="text" /><br>
+    
+    <label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+    
+    <label for="zip">Zip</label><input  id="zip" maxlength="20" name="zip" size="20" type="text" /><br>
+    
+    <label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+    
+    <label for="street">Street</label><textarea name="street"></textarea><br>
+    
+    Shipping Country:<input  id="00N5g000000iOEV" maxlength="18" name="00N5g000000iOEV" size="20" type="text" /><br>
+    
+    Shipping State/Province:<input  id="00N5g000000iOEf" maxlength="32" name="00N5g000000iOEf" size="20" type="text" /><br>
+    
+    Shipping Postal Code:<input  id="00N5g000000iOEa" maxlength="8" name="00N5g000000iOEa" size="20" type="text" /><br>
+    
+    Shipping City:<input  id="00N5g000000iOEQ" maxlength="18" name="00N5g000000iOEQ" size="20" type="text" /><br>
+    
+    Shipping Street:<input  id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20" type="text" /><br>
+    
+    <div class="g-recaptcha" data-sitekey="6LcbsfMZAAAAAM0KytzQnRiXV_1IKlNxlhgKUlzD"></div><br>
+    <input type="submit" name="submit">
+    
+    </form>
+    
