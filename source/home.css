@@ -42,6 +42,14 @@ input, textarea {
     border: solid 1px #d8dde6;
 }
 
+input:invalid {
+    border: solid 2px #ac050e;
+}
+
+input:active {
+    border: solid 2px #b4b4ca;
+}
+
 .web-form-field > :first-child {
     padding-left: 4px;
     margin-bottom: 5px;
