@@ -37,6 +37,16 @@ function checkvalidity(elem) {
     } else {
       elem.classList.remove('has-error');
     }
+  } else if (elem.id === 'url') {
+      if (elem.value.trim()) {
+        if (!isValidUrl(elem.value)) {
+          elem.classList.add('has-error');
+        } else {
+          elem.classList.remove('has-error');
+        }
+      } else {
+        elem.classList.remove('has-error');
+      }
   } else if (!elem.value.trim()) {
     elem.classList.add('has-error');
   } else if (elem.id === 'email' && !isValidEmail(elem.value)) {
@@ -51,7 +61,11 @@ function isValidEmail(email) {
 }
 
 function isValidDate(date) {
-  var a = String(new Date().getFullYear).slice(-1);
-  console.log(a);
-  return /(0[1-9]|1[012])\/(0[1-9]|1[0-9]|2[0-9]|3[01])\/(19\d\d|200/ + a + /)/.test(date);
+  var a = String(new Date().getFullYear() - 18).slice(-1);
+  var regExpDate = new RegExp("(0[1-9]|1[012])\\/(0[1-9]|1[0-9]|2[0-9]|3[01])\\/(19\\d\\d|200[0-" + a + "])");
+  return regExpDate.test(date);
+}
+
+function isValidUrl(url) {
+  return /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/.test(url);
 }
