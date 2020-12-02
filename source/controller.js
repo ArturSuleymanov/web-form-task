@@ -29,6 +29,7 @@ setTimeout(checkRecaptcha, 0);
 function checkvalidity(elem) {
   if (elem.id === '00N5g000000iJhE') {
     if (elem.value.trim()) {
+      console.log(isValidDate(elem.value))
       if (!isValidDate(elem.value)) {
         elem.classList.add('has-error');
       } else {
@@ -62,7 +63,7 @@ function isValidEmail(email) {
 
 function isValidDate(date) {
   var a = String(new Date().getFullYear() - 18).slice(-1);
-  var regExpDate = new RegExp("(0[1-9]|1[012])\\/(0[1-9]|1[0-9]|2[0-9]|3[01])\\/(19\\d\\d|200[0-" + a + "])");
+  var regExpDate = new RegExp("^(0[1-9]{1}|1[012])\\/(0?[1-9]|1[0-9]|2[0-9]|3[01])\\/(19\\d\\d|200[0-" + a + "]{1})$");
   return regExpDate.test(date);
 }
 
