@@ -43,7 +43,7 @@ input, textarea {
     outline: none;
 }
 
-input:invalid {
+.has-error {
     border: solid 2px #ac050e;
 }
 

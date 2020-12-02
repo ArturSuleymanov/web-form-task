@@ -18,11 +18,11 @@
     <body>
         <div class="container">
             <h1>Welcome, new Customer!</h1>
-            <form id="web-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <form id="qwerty" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
                 <div class="web-form">
                     <input type=hidden name='captcha_settings' value='{"keyname":"google_recaptcha","fallback":"true","orgId":"00D5g000000Jl3r","ts":""}'>
                     <input type=hidden name="oid" value="00D5g000000Jl3r">
-                    <input type=hidden name="retURL" value="http://yandex.by">
+                    <input type=hidden name="retURL" value="https://web-to-lead-form.herokuapp.com/congratulations.html">
                     
                     <!--  ----------------------------------------------------------------------  -->
                     <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
@@ -34,7 +34,7 @@
                     
                     <div class="web-form-field">
                         <label for="company">Company</label>
-                        <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" required/>
+                        <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" onblur="checkvalidity(this)" required/>
                     </div>                
                     <div class="web-form-field">
                         <label for="url">Website</label>
@@ -43,17 +43,17 @@
                     <div class="web-form-field">
                         <label for="first_name">Name</label>
                         <div class="web-form-field-name">
-                            <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" required/>
-                            <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" required/>
+                            <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" onblur="checkvalidity(this)" required/>
+                            <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" onblur="checkvalidity(this)" required/>
                         </div>
                     </div>                          
                     <div class="web-form-field">
                         <label for="00N5g000000iJhE">Birthdate</label>
-                        <span class="dateInput dateOnlyInput"></span><input id="00N5g000000iJhE" name="00N5g000000iJhE" size="20" type="text" />
+                        <span class="dateInput dateOnlyInput"></span><input placeholder="MM/dd/YYYY" id="00N5g000000iJhE" name="00N5g000000iJhE" onblur="checkvalidity(this)" size="20" type="text" />
                     </div>
                     <div class="web-form-field">
                         <label for="email">Email</label>
-                        <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="email" required/>
+                        <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="email" onblur="checkvalidity(this)" required/>
                     </div>                
                     <div class="web-form-field">
                         <label for="country">Country</label>
