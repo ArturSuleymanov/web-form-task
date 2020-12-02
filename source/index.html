@@ -1,0 +1,106 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+<html>
+    <head>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="controller.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    <body>
+        <div class="container">
+            <h1>Welcome, new Customer!</h1>
+            <form id="web-form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+                <div class="web-form">
+                    <input type=hidden name='captcha_settings' value='{"keyname":"google_recaptcha","fallback":"true","orgId":"00D5g000000Jl3r","ts":""}'>
+                    <input type=hidden name="oid" value="00D5g000000Jl3r">
+                    <input type=hidden name="retURL" value="http://yandex.by">
+                    
+                    <!--  ----------------------------------------------------------------------  -->
+                    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                    <!--  these lines if you wish to test in debug mode.                          -->
+                    <!--  <input type="hidden" name="debug" value=1>                              -->
+                    <!--  <input type="hidden" name="debugEmail"                                  -->
+                    <!--  value="artur.e.suleymanov@gmail.com">                                   -->
+                    <!--  ----------------------------------------------------------------------  -->
+                    
+                    <div class="web-form-field">
+                        <label for="company">Company</label>
+                        <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" required/>
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="url">Website</label>
+                        <input placeholder="Your website" id="url" maxlength="80" name="url" size="20" type="URL" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="first_name">Name</label>
+                        <div class="web-form-field-name">
+                            <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" required/>
+                            <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" required/>
+                        </div>
+                    </div>                          
+                    <div class="web-form-field">
+                        <label for="00N5g000000iJhE">Birthdate</label>
+                        <span class="dateInput dateOnlyInput"></span><input id="00N5g000000iJhE" name="00N5g000000iJhE" size="20" type="text" />
+                    </div>
+                    <div class="web-form-field">
+                        <label for="email">Email</label>
+                        <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="email" required/>
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="country">Country</label>
+                        <input id="country" maxlength="40" name="country" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="state">State/Province</label>
+                        <input id="state" maxlength="20" name="state" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="zip">Zip</label>
+                        <input id="zip" maxlength="20" name="zip" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="city">City</label>
+                        <input id="city" maxlength="40" name="city" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="street">Street</label>
+                        <textarea name="street"></textarea>
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="00N5g000000iOEV">Shipping Country</label>
+                        <input id="00N5g000000iOEV" maxlength="40" name="00N5g000000iOEV" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="00N5g000000iOEf">Shipping State/Province</label>
+                        <input id="00N5g000000iOEf" maxlength="20" name="00N5g000000iOEf" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="00N5g000000iOEa">Shipping Postal Code:</label>
+                        <input id="00N5g000000iOEa" maxlength="20" name="00N5g000000iOEa" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="00N5g000000iOEQ">Shipping City</label>
+                        <input id="00N5g000000iOEQ" maxlength="40" name="00N5g000000iOEQ" size="20" type="text" />
+                    </div>                
+                    <div class="web-form-field">
+                        <label for="00N5g000000iOEk">Shipping Street</label>
+                        <textarea id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20"></textarea>
+                    </div>
+                    
+                    <div class="g-recaptcha" data-sitekey="6LcbsfMZAAAAAM0KytzQnRiXV_1IKlNxlhgKUlzD"></div>
+                    <input class="button" type="submit" name="submit" value="I want to be your Customer">
+                </div>
+            </form>
+        </div>
+    </body>
+        
+</html>
