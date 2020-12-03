@@ -29,7 +29,6 @@ setTimeout(checkRecaptcha, 0);
 function checkvalidity(elem) {
   if (elem.id === '00N5g000000iJhE') {
     if (elem.value.trim()) {
-      console.log(isValidDate(elem.value))
       if (!isValidDate(elem.value)) {
         elem.classList.add('has-error');
       } else {
@@ -69,4 +68,40 @@ function isValidDate(date) {
 
 function isValidUrl(url) {
   return /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/.test(url);
+}
+
+function ischecked(elem) {
+  var section = document.getElementById("shipping-address");
+  console.log(section);
+  console.log(section.style.display);
+  if (elem.checked) {
+    section.style.display = 'flex';
+  } else {
+    section.style.display = 'none';
+  }
+}
+
+function clickpage(button) {
+  var firstSection = document.getElementById("company-info");
+  var secondSection = document.getElementById("billing-address");
+  var thirdSection = document.getElementById("summary-info");
+  
+  if (button.value === 'Next') {
+    if (firstSection.style.display === 'none') {
+      secondSection.style.display = 'none';
+      thirdSection.style.display = 'flex';
+    } else {
+      firstSection.style.display = 'none';
+      secondSection.style.display = 'flex';
+    }
+  } else {
+    if (secondSection.style.display === 'none') {
+      secondSection.style.display = 'flex';
+      thirdSection.style.display = 'none';
+    } else {
+      firstSection.style.display = 'flex';
+      secondSection.style.display = 'none';
+    }
+  }
+
 }

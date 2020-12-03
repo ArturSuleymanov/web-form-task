@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #F4F6F9;
 }
 
 h1 {
@@ -22,8 +21,18 @@ h1 {
     background-color: #fff;
 }
 
-.web-form > * {
+.web-form-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.web-form-section > * {
     margin: 6px 0px 8px 0px;
+}
+
+#billing-address, #shipping-address, #summary-info {
+    display: none;
 }
 
 .web-form-field {
@@ -33,7 +42,7 @@ h1 {
 }
 
 input, textarea {
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #fff;
     color: #54698d;
     height: 40px;
@@ -68,11 +77,16 @@ input:focus {
     margin-right: 15px;
 }
 
+.web-form-section-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .button {
-    margin: 0 auto;
     background: #006DD5;
     color: #fff;
-    width: 100%;
+    width: auto;
     text-align: center;
     padding: 10px 40px;
     position: relative;
@@ -80,7 +94,23 @@ input:focus {
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
 }
-/* 
+
+.next-button {
+    margin-left: auto;
+}
+
+.prev-button {
+    margin-right: auto;
+}
+
+#shipping-open-checkbox {
+    height: 14px;
+}
+
+.required {
+    color: red;
+}
+
 body {
-    width: 35rem;
-} */
+    background-color: #F4F6F9;
+}

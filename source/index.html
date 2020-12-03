@@ -31,76 +31,96 @@
                     <!--  <input type="hidden" name="debugEmail"                                  -->
                     <!--  value="artur.e.suleymanov@gmail.com">                                   -->
                     <!--  ----------------------------------------------------------------------  -->
-                    
-                    <div class="web-form-field">
-                        <label for="company">Company</label>
-                        <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" onblur="checkvalidity(this)"/>
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="url">Website</label>
-                        <input placeholder="Your website" id="url" maxlength="80" name="url" size="20" type="text" onblur="checkvalidity(this)"/>
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="first_name">Name</label>
-                        <div class="web-form-field-name">
-                            <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" onblur="checkvalidity(this)"/>
-                            <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" onblur="checkvalidity(this)"/>
+                    <div class="web-form-section" id="company-info">
+                        <div class="web-form-field" title="Field is required">
+                            <label for="company">Company name<span class="required">*</span></soan></label>
+                            <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
-                    </div>                          
-                    <div class="web-form-field">
-                        <label for="00N5g000000iJhE">Birthdate</label>
-                        <span class="dateInput dateOnlyInput"></span><input placeholder="MM/dd/YYYY" id="00N5g000000iJhE" name="00N5g000000iJhE" onblur="checkvalidity(this)" size="20" type="text" />
+                        <div class="web-form-field">
+                            <label for="url">Company site</label>
+                            <input placeholder="Your website" id="url" maxlength="80" name="url" size="20" type="text" onblur="checkvalidity(this)"/>
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="first_name">Name<span class="required">*</span></label>
+                            <div class="web-form-field-name">
+                                <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" onblur="checkvalidity(this)"/>
+                                <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" onblur="checkvalidity(this)"/>
+                            </div>
+                        </div>
+                        <div class="web-form-field">
+                            <label for="00N5g000000iJhE">Birthdate</label>
+                            <span class="dateInput dateOnlyInput"></span><input placeholder="MM/dd/YYYY" id="00N5g000000iJhE" name="00N5g000000iJhE" onblur="checkvalidity(this)" size="20" type="text" />
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="email">Email<span class="required">*</span></label>
+                            <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="text" onblur="checkvalidity(this)"/>
+                        </div>
+                        <div class="web-form-section-buttons">
+                            <input class="button next-button" onclick="clickpage(this)" type="button" value="Next">
+                        </div>
                     </div>
-                    <div class="web-form-field">
-                        <label for="email">Email</label>
-                        <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="text" onblur="checkvalidity(this)"/>
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="country">Country</label>
-                        <input id="country" maxlength="40" name="country" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="state">State/Province</label>
-                        <input id="state" maxlength="20" name="state" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="zip">Zip</label>
-                        <input id="zip" maxlength="20" name="zip" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="city">City</label>
-                        <input id="city" maxlength="40" name="city" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="street">Street</label>
-                        <textarea name="street"></textarea>
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="00N5g000000iOEV">Shipping Country</label>
-                        <input id="00N5g000000iOEV" maxlength="40" name="00N5g000000iOEV" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="00N5g000000iOEf">Shipping State/Province</label>
-                        <input id="00N5g000000iOEf" maxlength="20" name="00N5g000000iOEf" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="00N5g000000iOEa">Shipping Postal Code:</label>
-                        <input id="00N5g000000iOEa" maxlength="20" name="00N5g000000iOEa" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="00N5g000000iOEQ">Shipping City</label>
-                        <input id="00N5g000000iOEQ" maxlength="40" name="00N5g000000iOEQ" size="20" type="text" />
-                    </div>                
-                    <div class="web-form-field">
-                        <label for="00N5g000000iOEk">Shipping Street</label>
-                        <textarea id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20"></textarea>
+                    <div class="web-form-section" id="billing-address">
+                        <div class="web-form-field" title="Field is required">
+                            <label for="country">Billing Country<span class="required">*</span></label>
+                            <input id="country" maxlength="40" name="country" size="20" type="text" />
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="state">Billing State / Province<span class="required">*</span></label>
+                            <input id="state" maxlength="20" name="state" size="20" type="text" />
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="zip">Billing Zip / Postal Code<span class="required">*</span></label>
+                            <input id="zip" maxlength="20" name="zip" size="20" type="text" />
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="city">Billing City<span class="required">*</span></label>
+                            <input id="city" maxlength="40" name="city" size="20" type="text" />
+                        </div>
+                        <div class="web-form-field" title="Field is required">
+                            <label for="street">Billing Street<span class="required">*</span></label>
+                            <textarea name="street"></textarea>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="shipping-open-checkbox" id="shipping-open-checkbox" onclick="ischecked(this)"/>
+                            <label for="shipping-open-checkbox">Add shipping address</label>
+                        </div>
+                        <div class="web-form-section" id="shipping-address">
+                            <div class="web-form-field">
+                                <label for="00N5g000000iOEV">Shipping Country</label>
+                                <input id="00N5g000000iOEV" maxlength="40" name="00N5g000000iOEV" size="20" type="text" />
+                            </div>
+                            <div class="web-form-field">
+                                <label for="00N5g000000iOEf">Shipping State/Province</label>
+                                <input id="00N5g000000iOEf" maxlength="20" name="00N5g000000iOEf" size="20" type="text" />
+                            </div>
+                            <div class="web-form-field">
+                                <label for="00N5g000000iOEa">Shipping Postal Code:</label>
+                                <input id="00N5g000000iOEa" maxlength="20" name="00N5g000000iOEa" size="20" type="text" />
+                            </div>
+                            <div class="web-form-field">
+                                <label for="00N5g000000iOEQ">Shipping City</label>
+                                <input id="00N5g000000iOEQ" maxlength="40" name="00N5g000000iOEQ" size="20" type="text" />
+                            </div>
+                            <div class="web-form-field">
+                                <label for="00N5g000000iOEk">Shipping Street</label>
+                                <textarea id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20"></textarea>
+                            </div>
+                        </div>
+                        <div class="web-form-section-buttons">
+                            <input class="button prev-button" onclick="clickpage(this)" type="button" value="Prev">
+                            <input class="button next-button" onclick="clickpage(this)" type="button" value="Next">
+                        </div>
                     </div>
-                    
-                    <div class="g-recaptcha" data-sitekey="6LcbsfMZAAAAAM0KytzQnRiXV_1IKlNxlhgKUlzD"></div>
-                    <input class="button" type="submit" name="submit" value="I want to be your Customer">
+                    <div class="web-form-section" id="summary-info">
+                        <div class="g-recaptcha" data-sitekey="6LcbsfMZAAAAAM0KytzQnRiXV_1IKlNxlhgKUlzD"></div>
+                        <div class="web-form-section-buttons">
+                            <input class="button prev-button" onclick="clickpage(this)" type="button" value="Prev">
+                            <input class="button" type="submit" name="submit" value="Send">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </body>
-        
+
 </html>
