@@ -17,7 +17,7 @@
     <!--  ----------------------------------------------------------------------  -->
     <body>
         <div class="container">
-            <h1>Welcome, new Customer!</h1>
+            <h1 onclick="setsummaryinfo()">Welcome, new Customer! <div class="test"></div></h1>
             <form id="qwerty" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
                 <div class="web-form">
                     <input type=hidden name='captcha_settings' value='{"keyname":"google_recaptcha","fallback":"true","orgId":"00D5g000000Jl3r","ts":""}'>
@@ -34,26 +34,26 @@
                     <div class="web-form-section" id="company-info">
                         <div class="web-form-field" title="Field is required">
                             <label for="company">Company name<span class="required">*</span></soan></label>
-                            <input placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" onblur="checkvalidity(this)"/>
+                            <input class="web-form-section-field important" placeholder="Company Name" id="company" maxlength="40" name="company" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field">
                             <label for="url">Company site</label>
-                            <input placeholder="Your website" id="url" maxlength="80" name="url" size="20" type="text" onblur="checkvalidity(this)"/>
+                            <input class="web-form-section-field important" placeholder="Your website" id="url" maxlength="80" name="url" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="first_name">Name<span class="required">*</span></label>
                             <div class="web-form-field-name">
-                                <input placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" onblur="checkvalidity(this)"/>
-                                <input placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" onblur="checkvalidity(this)"/>
+                                <input class="web-form-section-field important" placeholder="First" id="first_name" maxlength="40" name="first_name" size="20" type="text" onblur="checkvalidity(this)"/>
+                                <input class="web-form-section-field important" placeholder="Last" id="last_name" maxlength="80" name="last_name" size="20" type="text" onblur="checkvalidity(this)"/>
                             </div>
                         </div>
                         <div class="web-form-field">
                             <label for="00N5g000000iJhE">Birthdate</label>
-                            <span class="dateInput dateOnlyInput"></span><input placeholder="MM/dd/YYYY" id="00N5g000000iJhE" name="00N5g000000iJhE" onblur="checkvalidity(this)" size="20" type="text" />
+                            <span class="dateInput dateOnlyInput"></span><input class="web-form-section-field important" placeholder="MM/dd/YYYY" id="00N5g000000iJhE" name="00N5g000000iJhE" onblur="checkvalidity(this)" size="20" type="text" />
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="email">Email<span class="required">*</span></label>
-                            <input placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="text" onblur="checkvalidity(this)"/>
+                            <input class="web-form-section-field important" placeholder="Your email address" id="email" maxlength="80" name="email" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-section-buttons">
                             <input class="button next-button" onclick="clickpage(this)" type="button" value="Next">
@@ -62,23 +62,23 @@
                     <div class="web-form-section" id="billing-address">
                         <div class="web-form-field" title="Field is required">
                             <label for="country">Billing Country<span class="required">*</span></label>
-                            <input id="country" maxlength="40" name="country" size="20" type="text" />
+                            <input class="web-form-section-field important" id="country" maxlength="40" name="country" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="state">Billing State / Province<span class="required">*</span></label>
-                            <input id="state" maxlength="20" name="state" size="20" type="text" />
+                            <input class="web-form-section-field important" id="state" maxlength="20" name="state" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="zip">Billing Zip / Postal Code<span class="required">*</span></label>
-                            <input id="zip" maxlength="20" name="zip" size="20" type="text" />
+                            <input class="web-form-section-field important" id="zip" maxlength="20" name="zip" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="city">Billing City<span class="required">*</span></label>
-                            <input id="city" maxlength="40" name="city" size="20" type="text" />
+                            <input class="web-form-section-field important" id="city" maxlength="40" name="city" size="20" type="text" onblur="checkvalidity(this)"/>
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="street">Billing Street<span class="required">*</span></label>
-                            <textarea name="street"></textarea>
+                            <textarea class="web-form-section-field important" name="street" onblur="checkvalidity(this)"></textarea>
                         </div>
                         <div>
                             <input type="checkbox" name="shipping-open-checkbox" id="shipping-open-checkbox" onclick="ischecked(this)"/>
@@ -87,23 +87,23 @@
                         <div class="web-form-section" id="shipping-address">
                             <div class="web-form-field">
                                 <label for="00N5g000000iOEV">Shipping Country</label>
-                                <input id="00N5g000000iOEV" maxlength="40" name="00N5g000000iOEV" size="20" type="text" />
+                                <input class="web-form-section-field" id="00N5g000000iOEV" maxlength="40" name="00N5g000000iOEV" size="20" type="text" />
                             </div>
                             <div class="web-form-field">
                                 <label for="00N5g000000iOEf">Shipping State/Province</label>
-                                <input id="00N5g000000iOEf" maxlength="20" name="00N5g000000iOEf" size="20" type="text" />
+                                <input class="web-form-section-field" id="00N5g000000iOEf" maxlength="20" name="00N5g000000iOEf" size="20" type="text" />
                             </div>
                             <div class="web-form-field">
                                 <label for="00N5g000000iOEa">Shipping Postal Code:</label>
-                                <input id="00N5g000000iOEa" maxlength="20" name="00N5g000000iOEa" size="20" type="text" />
+                                <input class="web-form-section-field" id="00N5g000000iOEa" maxlength="20" name="00N5g000000iOEa" size="20" type="text" />
                             </div>
                             <div class="web-form-field">
                                 <label for="00N5g000000iOEQ">Shipping City</label>
-                                <input id="00N5g000000iOEQ" maxlength="40" name="00N5g000000iOEQ" size="20" type="text" />
+                                <input class="web-form-section-field" id="00N5g000000iOEQ" maxlength="40" name="00N5g000000iOEQ" size="20" type="text" />
                             </div>
                             <div class="web-form-field">
                                 <label for="00N5g000000iOEk">Shipping Street</label>
-                                <textarea id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20"></textarea>
+                                <textarea class="web-form-section-field" id="00N5g000000iOEk" maxlength="255" name="00N5g000000iOEk" size="20"></textarea>
                             </div>
                         </div>
                         <div class="web-form-section-buttons">
@@ -112,6 +112,21 @@
                         </div>
                     </div>
                     <div class="web-form-section" id="summary-info">
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
+                        <div class="web-form-section-summary-field"></div>
                         <div class="g-recaptcha" data-sitekey="6LcbsfMZAAAAAM0KytzQnRiXV_1IKlNxlhgKUlzD"></div>
                         <div class="web-form-section-buttons">
                             <input class="button prev-button" onclick="clickpage(this)" type="button" value="Prev">

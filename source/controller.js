@@ -27,10 +27,13 @@ function checkRecaptcha() {
 setTimeout(checkRecaptcha, 0);
 
 function checkvalidity(elem) {
+  var isValid = true;
+
   if (elem.id === '00N5g000000iJhE') {
     if (elem.value.trim()) {
       if (!isValidDate(elem.value)) {
         elem.classList.add('has-error');
+        isValid = false;
       } else {
         elem.classList.remove('has-error');
       }
@@ -41,6 +44,7 @@ function checkvalidity(elem) {
       if (elem.value.trim()) {
         if (!isValidUrl(elem.value)) {
           elem.classList.add('has-error');
+          isValid = false;
         } else {
           elem.classList.remove('has-error');
         }
@@ -49,11 +53,15 @@ function checkvalidity(elem) {
       }
   } else if (!elem.value.trim()) {
     elem.classList.add('has-error');
+    isValid = false;
   } else if (elem.id === 'email' && !isValidEmail(elem.value)) {
     elem.classList.add('has-error');
+    isValid = false;
   } else {
     elem.classList.remove('has-error');
   }
+  
+  return isValid;
 }
 
 function isValidEmail(email) {
@@ -72,8 +80,7 @@ function isValidUrl(url) {
 
 function ischecked(elem) {
   var section = document.getElementById("shipping-address");
-  console.log(section);
-  console.log(section.style.display);
+
   if (elem.checked) {
     section.style.display = 'flex';
   } else {
@@ -85,14 +92,30 @@ function clickpage(button) {
   var firstSection = document.getElementById("company-info");
   var secondSection = document.getElementById("billing-address");
   var thirdSection = document.getElementById("summary-info");
+  var isValid = true;
   
   if (button.value === 'Next') {
     if (firstSection.style.display === 'none') {
-      secondSection.style.display = 'none';
-      thirdSection.style.display = 'flex';
+      for (var elem of secondSection.querySelectorAll('.web-form-section-field.important')) {
+        validity = checkvalidity(elem);
+        isValid = validity ? isValid : validity;
+      }
+
+      if (isValid) {
+        secondSection.style.display = 'none';
+        thirdSection.style.display = 'flex';
+        setsummaryinfo();
+      }
     } else {
-      firstSection.style.display = 'none';
-      secondSection.style.display = 'flex';
+      for (var elem of firstSection.querySelectorAll('.web-form-section-field.important')) {
+        validity = checkvalidity(elem);
+        isValid = validity ? isValid : validity;
+      }
+
+      if (isValid) {
+        firstSection.style.display = 'none';
+        secondSection.style.display = 'flex';
+      }
     }
   } else {
     if (secondSection.style.display === 'none') {
@@ -104,4 +127,26 @@ function clickpage(button) {
     }
   }
 
+}
+
+function setsummaryinfo() {
+  var fields = document.querySelectorAll('.web-form-field');
+  var summarydivs = document.querySelectorAll('.web-form-section-summary-field');
+
+  for (var i = 0; i < fields.length; i++) {
+    var label = fields[i].children[0].innerHTML;
+    var input = fields[i].children[1];
+    var value;
+    
+    if (input.children.length) {
+      value = input.children[0].value + ' ' + input.children[1].value;
+    } else {
+      value = input.value;
+    }
+
+    if (value) {
+      summarydivs[i].innerHTML = '<span>' + label + '</span><span>' + value + '</span>';
+      summarydivs[i].style.margin = '6px 0px 8px 6px';
+    }
+  }
 }
