@@ -1,3 +1,7 @@
+body {
+    background-color: #F4F6F9;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -116,6 +120,23 @@ input:focus {
     margin: 0;
 }
 
-body {
-    background-color: #F4F6F9;
+.final-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 132px;
+    background-color: #fff;
+    color: #839cc7;
+    height: 15rem;
+    width: 35rem;
+    padding: 10px;
+    background: rgba(255,255,255,0.1);
+    border: solid 3px #d8dde6;
+    margin: auto;
+    margin-top: 15rem;
+}
+
+.final-container > * {
+    align-self: start;
+    margin-left: 5rem;
 }
