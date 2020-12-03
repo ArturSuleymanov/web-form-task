@@ -49,6 +49,10 @@ input, textarea {
     outline: none;
 }
 
+textarea {
+    resize: vertical;
+}
+
 .has-error {
     border: solid 2px #ac050e;
 }
