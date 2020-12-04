@@ -50,7 +50,8 @@
                         </div>
                         <div class="web-form-field">
                             <label for="00N5g000000iJhE">Birthdate</label>
-                            <input class="web-form-section-field" id="00N5g000000iJhE" min="1920-01-01" name="00N5g000000iJhE" size="20" type="date" />
+                            <input class="web-form-section-field" id="date-field" min="1920-01-01" size="20" type="date" onchange="setDateValue(this)"/>
+                            <input hidden id="00N5g000000iJhE" name="00N5g000000iJhE" size="20" type="text" />
                         </div>
                         <div class="web-form-field" title="Field is required">
                             <label for="email">Email<span class="required">*</span></label>

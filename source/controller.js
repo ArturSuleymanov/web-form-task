@@ -29,7 +29,7 @@ setTimeout(checkRecaptcha, 0);
 function setMaxDate() {
   var date = new Date();
   var dayOfMonth = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  document.getElementById('00N5g000000iJhE').max = (date.getFullYear() - 18) + '-' + (date.getMonth()+1) + '-' + dayOfMonth;
+  document.getElementById('date-field').max = (date.getFullYear() - 18) + '-' + (date.getMonth()+1) + '-' + dayOfMonth;
 }
 
 setTimeout(setMaxDate, 0);
@@ -146,4 +146,8 @@ function setSummaryinfo() {
       summarydivs[i].style.margin = '6px 0px 8px 6px';
     }
   }
+}
+
+function setDateValue(elem) {
+  document.getElementById('00N5g000000iJhE').value = new Date(elem.value).toLocaleDateString("en-US");
 }
