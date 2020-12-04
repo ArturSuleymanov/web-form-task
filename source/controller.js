@@ -1,4 +1,4 @@
-function timestamp() { 
+function timeStamp() { 
   var response = document.getElementById("g-recaptcha-response"); 
 
   if (response == null || response.value.trim() == "") {
@@ -8,7 +8,7 @@ function timestamp() {
   } 
 }
 
-setInterval(timestamp, 500); 
+setInterval(timeStamp, 500); 
 
 function checkRecaptcha() {
   document.getElementById("qwerty").addEventListener("submit", function(evt) {
@@ -26,17 +26,15 @@ function checkRecaptcha() {
 
 setTimeout(checkRecaptcha, 0);
 
-function setmaxdate() {
+function setMaxDate() {
   var date = new Date();
-  console.log(document.getElementById('00N5g000000iJhE'));
-  console.log(date);
-  var dayofMonth = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  document.getElementById('00N5g000000iJhE').max = (date.getFullYear() - 18) + '-' + (date.getMonth()+1) + '-' + dayofMonth;
+  var dayOfMonth = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+  document.getElementById('00N5g000000iJhE').max = (date.getFullYear() - 18) + '-' + (date.getMonth()+1) + '-' + dayOfMonth;
 }
 
-setTimeout(setmaxdate, 0);
+setTimeout(setMaxDate, 0);
 
-function checkvalidity(elem) {
+function checkInputValidity(elem) {
   var isValid = true;
 
   if (elem.id === 'url') {
@@ -77,7 +75,7 @@ function isValidUrl(url) {
   return /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/.test(url);
 }
 
-function ischecked(elem) {
+function isChecked(elem) {
   var section = document.getElementById("shipping-address");
 
   if (elem.checked) {
@@ -87,7 +85,7 @@ function ischecked(elem) {
   }
 }
 
-function clickpage(button) {
+function clickPage(button) {
   var firstSection = document.getElementById("company-info");
   var secondSection = document.getElementById("billing-address");
   var thirdSection = document.getElementById("summary-info");
@@ -96,18 +94,18 @@ function clickpage(button) {
   if (button.value === 'Next') {
     if (firstSection.style.display === 'none') {
       for (var elem of secondSection.querySelectorAll('.web-form-section-field.important')) {
-        validity = checkvalidity(elem);
+        validity = checkInputValidity(elem);
         isValid = validity ? isValid : validity;
       }
 
       if (isValid) {
         secondSection.style.display = 'none';
         thirdSection.style.display = 'flex';
-        setsummaryinfo();
+        setSummaryinfo();
       }
     } else {
       for (var elem of firstSection.querySelectorAll('.web-form-section-field.important')) {
-        validity = checkvalidity(elem);
+        validity = checkInputValidity(elem);
         isValid = validity ? isValid : validity;
       }
 
@@ -128,7 +126,7 @@ function clickpage(button) {
 
 }
 
-function setsummaryinfo() {
+function setSummaryinfo() {
   var fields = document.querySelectorAll('.web-form-field');
   var summarydivs = document.querySelectorAll('.web-form-section-summary-field');
 
