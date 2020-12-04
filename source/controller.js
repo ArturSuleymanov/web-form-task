@@ -26,12 +26,22 @@ function checkRecaptcha() {
 
 setTimeout(checkRecaptcha, 0);
 
+function setmaxdate() {
+  var date = new Date();
+  console.log(document.getElementById('00N5g000000iJhE'));
+  console.log(date);
+  var dayofMonth = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+  document.getElementById('00N5g000000iJhE').max = (date.getFullYear() - 18) + '-' + (date.getMonth()+1) + '-' + dayofMonth;
+}
+
+setTimeout(setmaxdate, 0);
+
 function checkvalidity(elem) {
   var isValid = true;
 
-  if (elem.id === '00N5g000000iJhE') {
+  if (elem.id === 'url') {
     if (elem.value.trim()) {
-      if (!isValidDate(elem.value)) {
+      if (!isValidUrl(elem.value)) {
         elem.classList.add('has-error');
         isValid = false;
       } else {
@@ -40,17 +50,6 @@ function checkvalidity(elem) {
     } else {
       elem.classList.remove('has-error');
     }
-  } else if (elem.id === 'url') {
-      if (elem.value.trim()) {
-        if (!isValidUrl(elem.value)) {
-          elem.classList.add('has-error');
-          isValid = false;
-        } else {
-          elem.classList.remove('has-error');
-        }
-      } else {
-        elem.classList.remove('has-error');
-      }
   } else if (!elem.value.trim()) {
     elem.classList.add('has-error');
     isValid = false;
@@ -68,11 +67,11 @@ function isValidEmail(email) {
   return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
 }
 
-function isValidDate(date) {
+/* function isValidDate(date) {
   var a = String(new Date().getFullYear() - 18).slice(-1);
   var regExpDate = new RegExp("^(0?[1-9]{1}|1[012])\\/(0?[1-9]|1[0-9]|2[0-9]|3[01])\\/(19\\d\\d|200[0-" + a + "]{1})$");
   return regExpDate.test(date);
-}
+} */
 
 function isValidUrl(url) {
   return /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/.test(url);
